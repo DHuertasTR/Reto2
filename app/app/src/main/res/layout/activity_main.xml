@@ -24,27 +24,27 @@
         android:layout_width="254dp"
         android:layout_height="0dp"
         android:layout_marginBottom="112dp"
-        android:text="Nombre del usuario del entrenador pokemon"
+        android:text="Nombre del usuario entrenador pokemon"
         android:textAlignment="center"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/textInputEditText"
+        app:layout_constraintBottom_toTopOf="@+id/trainerName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputEditText"
+        android:id="@+id/trainerName"
         android:layout_width="340dp"
         android:layout_height="0dp"
         android:layout_marginBottom="92dp"
         android:hint="Nombre del entrenador"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/loginButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/loginButton"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginBottom="140dp"

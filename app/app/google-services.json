@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1098831961582",
+    "project_id": "pokebase-145b7",
+    "storage_bucket": "pokebase-145b7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1098831961582:android:ee365adfb4108665e3c2ff",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1098831961582-qp4s8ko6dp9h87a6r0csk4rm373cumd0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSr3bI94vmufoaQbta4G9IA77x5q0MZbg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1098831961582-qp4s8ko6dp9h87a6r0csk4rm373cumd0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

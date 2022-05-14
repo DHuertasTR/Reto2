@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private val usersReals= arrayListOf<String>()
+    var userLooged ="nobody"
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,15 +55,22 @@ class MainActivity : AppCompatActivity() {
 
     fun realTrainerNofake(){
         val userinfo=binding.trainerName.text.toString()
-        if(userinfo in usersReals){
 
-            val intent=Intent(this,PokeHomeActivity::class.java).apply {
-                putExtra("com.example.myapplication",userinfo)
+        val query = Firebase.firestore.collection("users").whereEqualTo("username",userinfo)
+        query.get().addOnCompleteListener{ task ->
+            if(task.result?.size()!=0){
+                userLooged=userinfo
+                val intent=Intent(this,PokeHomeActivity::class.java).apply {
+                    putExtra("com.example.myapplication",userinfo)
+                }
+                startActivity(intent)
+
+            }else{
+                Toast.makeText(this,"No Tiene Permiso de ingreso :(",Toast.LENGTH_SHORT).show()
             }
-            startActivity(intent)
-        }else{
-            Toast.makeText(this,"No Tiene Permiso de ingreso :(",Toast.LENGTH_SHORT).show()
         }
+
+
     }
 
 }

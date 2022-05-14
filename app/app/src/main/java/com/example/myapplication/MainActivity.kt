@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         binding.loginButton.setOnClickListener{
             realTrainerNofake()
         }
-
+        this.title = "Pokedex"
 
     }
     fun poblateUserPool(array: ArrayList<String>){

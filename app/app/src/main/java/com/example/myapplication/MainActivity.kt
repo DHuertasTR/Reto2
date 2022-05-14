@@ -7,6 +7,11 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.example.myapplication.databinding.ActivityMainBinding
+import com.google.firebase.FirebaseApp
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -20,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        poblateUserPool(usersReals)
+        //poblateUserPool(usersReals)
         binding.loginButton.setOnClickListener{
             realTrainerNofake()
         }
@@ -28,13 +33,22 @@ class MainActivity : AppCompatActivity() {
 
     }
     fun poblateUserPool(array: ArrayList<String>){
+        val user1="brock"
+        val user2="red team"
         array.add("ash ketchup")
-        array.add("red team")
-        array.add("brock")
+        array.add(user1)
+        array.add(user2)
+
+        postUser(user1)
+        postUser(user2)
+
     }
 
+
     fun  postUser(username:String){
-        val user= User(UUID.randomUUID().toString())
+        val list = arrayListOf<String>()
+        val user= User(UUID.randomUUID().toString(),username,list)
+        Firebase.firestore.collection("users").document(user.userId).set(user)
     }
 
 

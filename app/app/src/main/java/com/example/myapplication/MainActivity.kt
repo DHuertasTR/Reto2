@@ -1,19 +1,17 @@
 package com.example.myapplication
 
-import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.os.Build
 import android.os.Bundle
-import android.view.View
+import android.os.StrictMode
+import android.os.StrictMode.ThreadPolicy
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.databinding.ActivityMainBinding
-import com.google.firebase.FirebaseApp
-import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-
 import java.util.*
-import kotlin.collections.ArrayList
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,11 +24,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         //poblateUserPool(usersReals)
         binding.loginButton.setOnClickListener{
             realTrainerNofake()
         }
         this.title = "Pokedex"
+
 
     }
     fun poblateUserPool(array: ArrayList<String>){
@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
         query.get().addOnCompleteListener{ task ->
             if(task.result?.size()!=0){
                 userLooged=userinfo
-                val intent=Intent(this,PokeHomeActivity::class.java).apply {
+                val intent=Intent(this,TempPokeActivity::class.java).apply {
                     putExtra("com.example.myapplication",userinfo)
                 }
                 startActivity(intent)
